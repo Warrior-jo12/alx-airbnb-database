@@ -9,7 +9,9 @@ SELECT
     b.status
 FROM Bookings b
 INNER JOIN Users u 
-  ON b.user_id = u.user_id;
+    ON b.user_id = u.user_id
+ORDER BY b.check_in DESC;
+
 
 -- Left Join ---
 SELECT 
@@ -20,7 +22,9 @@ SELECT
     r.comment
 FROM Properties p
 LEFT JOIN Reviews r 
-    ON p.property_id = r.property_id;
+    ON p.property_id = r.property_id
+ORDER BY p.title ASC, r.rating DESC;
+
 --Full outer join--
 SELECT 
     u.user_id,
@@ -32,4 +36,5 @@ SELECT
     b.status
 FROM Users u
 FULL OUTER JOIN Bookings b
-    ON u.user_id = b.user_id;
+    ON u.user_id = b.user_id
+ORDER BY u.name ASC, b.check_in DESC;
