@@ -41,7 +41,56 @@ CREATE INDEX idx_property_created_at ON Property(created_at);
 
 
 
+--EXPLAIN AND ANALYZE
 
+EXPLAIN ANALYZE
+SELECT *
+FROM "User"
+WHERE email = 'example@email.com';
+
+
+EXPLAIN ANALYZE
+SELECT *
+FROM "User"
+WHERE created_at >= '2025-01-01'
+ORDER BY created_at DESC;
+
+EXPLAIN ANALYZE
+SELECT *
+FROM Booking
+WHERE user_id = 123;
+
+EXPLAIN ANALYZE
+SELECT *
+FROM Booking
+WHERE start_date >= '2025-09-01'
+  AND end_date <= '2025-09-30'
+ORDER BY start_date;
+
+EXPLAIN ANALYZE
+SELECT *
+FROM Booking
+WHERE status = 'confirmed';
+EXPLAIN ANALYZE
+SELECT *
+FROM Property
+WHERE host_id = 789;
+
+EXPLAIN ANALYZE
+SELECT *
+FROM Property
+WHERE location = 'Addis Ababa';
+
+EXPLAIN ANALYZE
+SELECT *
+FROM Property
+WHERE location = 'Addis Ababa';
+
+EXPLAIN ANALYZE
+SELECT *
+FROM Property
+ORDER BY created_at DESC
+LIMIT 10;
 
 
 
