@@ -1,4 +1,4 @@
-
+--Non-Correlated Subquery--
 SELECT 
     p.property_id,
     p.title,
@@ -12,7 +12,7 @@ WHERE p.property_id IN (
 )
 ORDER BY p.title ASC;
 
-
+--Correlated Subquery--
 SELECT 
     u.user_id,
     u.name,
